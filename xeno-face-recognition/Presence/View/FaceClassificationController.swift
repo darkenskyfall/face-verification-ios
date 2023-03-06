@@ -216,7 +216,7 @@ class FaceClassificationController: UIViewController {
             self.session.removeInput(oldInput)
         }
 
-        if let input: AVCaptureDeviceInput = camera(for: .back){
+        if let input: AVCaptureDeviceInput = camera(for: .front){
             // Succeeded, set input and update connection states
             self.session.addInput(input)
         }else{

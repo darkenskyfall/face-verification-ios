@@ -13,11 +13,15 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var imgView: UIImageView!
     
+    @IBOutlet weak var img1: UIImageView!
+    @IBOutlet weak var img2: UIImageView!
+    @IBOutlet weak var img3: UIImageView!
+    
     var allFaces = [FaceIdService.Face]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showModel()
     }
     
     @IBAction func deleteSampleDidTap(_ sender: Any) {
@@ -68,7 +72,7 @@ class HomeController: UIViewController {
                 if i == 3{
                     let alert = UIAlertController(title: "Success", message: "Sample removed successfully!", preferredStyle: .actionSheet)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { act in
-                        ///
+                        self.showModel()
                     }))
                     present(alert, animated: true)
                 }
@@ -164,6 +168,18 @@ class HomeController: UIViewController {
         
     }
     
+    private func showModel(){
+        if checkFile(){
+            self.img1.image = getImage(fileName: "example1.jpg")!
+            self.img2.image = getImage(fileName: "example2.jpg")!
+            self.img3.image = getImage(fileName: "example3.jpg")!
+        }else{
+            self.img1.image = nil
+            self.img2.image = nil
+            self.img3.image = nil
+        }
+    }
+    
     private func getImage(fileName: String)->UIImage?{
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsURL.appendingPathComponent("\(fileName).jpg")
@@ -180,7 +196,7 @@ class HomeController: UIViewController {
             
             let alert = UIAlertController(title: "Success", message: "Sample saved successfully!", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { act in
-                
+                self.showModel()
             }))
             
             self.present(alert, animated: true)
