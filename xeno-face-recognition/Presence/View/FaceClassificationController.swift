@@ -300,34 +300,30 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
         let uiimage = convert(cmage: ciimage)
         
         FaceIdService.shared.identify(image: uiimage) { faceFeatures in
-            DispatchQueue.main.async {
+            self.selectedFaceFeatures = faceFeatures
+            
+            if let selectedFaceFeatures = self.selectedFaceFeatures{
                 
-                self.selectedFaceFeatures = faceFeatures
+                let a = FaceIdService.shared.isFace(self.allFaces[0], hasCloseFeaturesWith: selectedFaceFeatures)
+                let b = FaceIdService.shared.isFace(self.allFaces[1], hasCloseFeaturesWith: selectedFaceFeatures)
+                let c = FaceIdService.shared.isFace(self.allFaces[2], hasCloseFeaturesWith: selectedFaceFeatures)
                 
-                if let selectedFaceFeatures = self.selectedFaceFeatures{
-                    
-                    let a = FaceIdService.shared.isFace(self.allFaces[0], hasCloseFeaturesWith: selectedFaceFeatures)
-                    let b = FaceIdService.shared.isFace(self.allFaces[1], hasCloseFeaturesWith: selectedFaceFeatures)
-                    let c = FaceIdService.shared.isFace(self.allFaces[2], hasCloseFeaturesWith: selectedFaceFeatures)
-                    
-                    print("a", a)
-                    print("b", b)
-                    print("c", c)
-                    
-                    let match = [a, b ,c]
-                    
-                    if !match.contains(false){
+                print("a", a)
+                print("b", b)
+                print("c", c)
+                
+                let match = [a, b ,c]
+                
+                if !match.contains(false){
 //                        self.isMatch = true
-                        self.setStatus(status: "face-match")
-                    }else{
-                        self.setStatus(status: "face-not-match")
-                    }
-                    
+                    self.setStatus(status: "face-match")
+                }else{
+                    self.setStatus(status: "face-not-match")
                 }
                 
-                self.flag = false
-                
             }
+            
+            self.flag = false
         }
         
         

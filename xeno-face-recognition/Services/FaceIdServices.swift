@@ -55,7 +55,7 @@ class FaceIdService {
     }
 
     func isFace(_ face: Face, hasCloseFeaturesWith otherFaceFeatures: MLMultiArray) -> Bool {
-        let treshold = 102.0 // find what is best
+        let treshold = 70.0 // find what is best
         var distance: Double = 0
 
         for index in 0..<otherFaceFeatures.count {
@@ -63,6 +63,8 @@ class FaceIdService {
             distance += delta * delta
         }
         distance = distance.squareRoot()
+        
+        print(distance)
 
         return distance < treshold
     }

@@ -19,9 +19,6 @@ class ScanFaceController: UIViewController {
     @IBOutlet weak var valView: UIView!
     @IBOutlet weak var valLbl: UILabel!
     
-    @IBOutlet weak var img1: UIImageView!
-    @IBOutlet weak var img2: UIImageView!
-    
     // Video objects.
     fileprivate lazy var session: AVCaptureSession! = {
         $0.sessionPreset = .hd1280x720

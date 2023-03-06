@@ -11,11 +11,13 @@ import TensorFlowLite
 
 class HomeController: UIViewController {
     
-    @IBOutlet weak var imgView: UIImageView!
     
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img3: UIImageView!
+    @IBOutlet weak var img4: UIImageView!
+    @IBOutlet weak var img5: UIImageView!
+    
     
     var allFaces = [FaceIdService.Face]()
     
