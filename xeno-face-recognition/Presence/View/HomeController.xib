@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeController" customModule="xeno_face_recognition" customModuleProvider="target">
+            <connections>
+                <outlet property="imgView" destination="Kmf-W6-Xs4" id="qc7-6p-QPd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPa-u0-A7J">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSe-ls-jzA">
+                            <rect key="frame" x="20" y="788" width="353" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="JYg-uK-QEt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Scan Face">
+                                <color key="titleColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <buttonConfiguration key="configuration" style="plain" title="Scan Face">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="baseForegroundColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="scanBtnDidTap:" destination="-1" eventType="touchUpInside" id="d4u-Os-MsV"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Face Recognition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6b-y7-DbJ">
+                            <rect key="frame" x="20" y="100" width="353" height="29"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The example of iOS Face Recognition using TensorFlowLite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-xN-6V9">
+                            <rect key="frame" x="20" y="149" width="353" height="40.666666666666657"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kmf-W6-Xs4">
+                            <rect key="frame" x="96.666666666666686" y="504" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="cfD-JS-K1q"/>
+                                <constraint firstAttribute="width" constant="200" id="riX-Q5-N6s"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-Dt-jDg">
+                            <rect key="frame" x="20" y="724" width="353" height="44"/>
+                            <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="MGq-eT-Waf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Delete Sample">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <buttonConfiguration key="configuration" style="plain" title="Delete Sample">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="deleteSampleDidTap:" destination="-1" eventType="touchUpInside" id="oN9-NA-gdL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.086274509803921567" green="0.62745098039215685" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="QXL-Dt-jDg" firstAttribute="top" secondItem="Kmf-W6-Xs4" secondAttribute="bottom" constant="20" id="1gM-Ex-V16"/>
+                        <constraint firstItem="Kmf-W6-Xs4" firstAttribute="centerX" secondItem="fPa-u0-A7J" secondAttribute="centerX" id="DtA-nr-iMd"/>
+                        <constraint firstItem="I6b-y7-DbJ" firstAttribute="leading" secondItem="fPa-u0-A7J" secondAttribute="leading" constant="20" id="Hno-kt-58g"/>
+                        <constraint firstAttribute="trailing" secondItem="GHA-xN-6V9" secondAttribute="trailing" constant="20" id="ThD-ID-rlQ"/>
+                        <constraint firstAttribute="bottom" secondItem="gSe-ls-jzA" secondAttribute="bottom" constant="20" id="TjL-Sb-EZT"/>
+                        <constraint firstAttribute="trailing" secondItem="QXL-Dt-jDg" secondAttribute="trailing" constant="20" id="VSJ-bQ-YCl"/>
+                        <constraint firstAttribute="trailing" secondItem="I6b-y7-DbJ" secondAttribute="trailing" constant="20" id="X02-vX-YmQ"/>
+                        <constraint firstItem="I6b-y7-DbJ" firstAttribute="top" secondItem="fPa-u0-A7J" secondAttribute="top" constant="100" id="ePz-fk-rKo"/>
+                        <constraint firstItem="gSe-ls-jzA" firstAttribute="top" secondItem="QXL-Dt-jDg" secondAttribute="bottom" constant="20" id="f9Y-G1-Uqg"/>
+                        <constraint firstAttribute="trailing" secondItem="gSe-ls-jzA" secondAttribute="trailing" constant="20" id="i7d-9G-gvJ"/>
+                        <constraint firstItem="gSe-ls-jzA" firstAttribute="leading" secondItem="fPa-u0-A7J" secondAttribute="leading" constant="20" id="j70-Aa-Mv2"/>
+                        <constraint firstItem="QXL-Dt-jDg" firstAttribute="leading" secondItem="fPa-u0-A7J" secondAttribute="leading" constant="20" id="mHF-hQ-tAZ"/>
+                        <constraint firstItem="GHA-xN-6V9" firstAttribute="leading" secondItem="fPa-u0-A7J" secondAttribute="leading" constant="20" id="s7E-8X-mql"/>
+                        <constraint firstItem="GHA-xN-6V9" firstAttribute="top" secondItem="I6b-y7-DbJ" secondAttribute="bottom" constant="20" id="tYL-pn-b9d"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fPa-u0-A7J" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2nj-cz-MwM"/>
+                <constraint firstItem="fPa-u0-A7J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5w9-NV-DmQ"/>
+                <constraint firstItem="fPa-u0-A7J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KNS-fy-bwa"/>
+                <constraint firstAttribute="bottom" secondItem="fPa-u0-A7J" secondAttribute="bottom" id="mZ8-Pw-5dw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+</document>

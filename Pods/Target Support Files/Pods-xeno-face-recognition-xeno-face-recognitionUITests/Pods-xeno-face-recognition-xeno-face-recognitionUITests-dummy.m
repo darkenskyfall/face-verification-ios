@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_xeno_face_recognition_xeno_face_recognitionUITests : NSObject
+@end
+@implementation PodsDummy_Pods_xeno_face_recognition_xeno_face_recognitionUITests
+@end

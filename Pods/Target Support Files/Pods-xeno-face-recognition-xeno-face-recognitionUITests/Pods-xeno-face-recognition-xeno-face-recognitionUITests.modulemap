@@ -1,0 +1,6 @@
+framework module Pods_xeno_face_recognition_xeno_face_recognitionUITests {
+  umbrella header "Pods-xeno-face-recognition-xeno-face-recognitionUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

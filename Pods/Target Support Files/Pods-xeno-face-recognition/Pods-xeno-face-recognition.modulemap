@@ -1,0 +1,6 @@
+framework module Pods_xeno_face_recognition {
+  umbrella header "Pods-xeno-face-recognition-umbrella.h"
+
+  export *
+  module * { export * }
+}
