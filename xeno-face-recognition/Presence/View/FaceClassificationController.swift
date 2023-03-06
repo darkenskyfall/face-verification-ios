@@ -263,28 +263,26 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
         let faceDetectionRequest = VNDetectFaceLandmarksRequest(completionHandler: { (request: VNRequest, error: Error?) in
             DispatchQueue.main.async {
                 
-//                if let faceRectangles = request.results as? [VNFaceObservation], faceRectangles.count > 0 {
-//
-//                    if self.isMatch{
-//                        for face in faceRectangles{
-//                            if self.isBlink(face: face){
-//                                DispatchQueue.main.async {
-//                                    self.dismiss(animated: true) {
-//                                        self.tekkenPhotoHandler?()
-//                                    }
-//                                }
-//                            }
-//                        }
-//                        return
-//                    }
-//
-//                    self.compareImage(buffer: image)
-//                } else {
-//                    self.setStatus(status: "face-not-found")
-//                    self.isMatch = false
-//                }
-                
-                self.compareImage(buffer: image)
+                if let faceRectangles = request.results as? [VNFaceObservation], faceRectangles.count > 0 {
+
+                    if self.isMatch{
+                        for face in faceRectangles{
+                            if self.isBlink(face: face){
+                                DispatchQueue.main.async {
+                                    self.dismiss(animated: true) {
+                                        self.tekkenPhotoHandler?()
+                                    }
+                                }
+                            }
+                        }
+                        return
+                    }
+
+                    self.compareImage(buffer: image)
+                } else {
+                    self.setStatus(status: "face-not-found")
+                    self.isMatch = false
+                }
                 
             }
         })
@@ -315,7 +313,7 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
                 let match = [a, b ,c]
                 
                 if !match.contains(false){
-//                        self.isMatch = true
+                        self.isMatch = true
                     self.setStatus(status: "face-match")
                 }else{
                     self.setStatus(status: "face-not-match")

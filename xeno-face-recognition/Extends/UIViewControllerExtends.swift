@@ -12,25 +12,6 @@ import CoreImage
 
 extension UIViewController{
     
-    func isFace(face: VNFaceObservation)->Bool{
-        if let roll = face.roll as? Double{
-            
-            // Determine if the face is facing up or facing down
-            if roll < -0.5 {
-                // Face is facing down
-                print("Face is facing down")
-            } else if roll > 0.5 {
-                // Face is facing up
-                print("Face is facing up")
-            } else {
-                // Face is facing forward
-                print("Face is facing forward")
-            }
-            return false
-        }
-        return false
-    }
-    
     func isTurnRight(face: VNFaceObservation)->Bool{
         if let yaw = face.yaw as? Double{
             return yaw >= 0.7
