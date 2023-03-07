@@ -79,14 +79,21 @@
                                 <constraint firstAttribute="bottom" secondItem="fAb-kG-BwC" secondAttribute="bottom" constant="20" id="cyz-r9-aYa"/>
                             </constraints>
                         </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-face-pole" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-bR-9nc">
+                            <rect key="frame" x="0.0" y="90.333333333333314" width="393" height="733.66666666666674"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="5WO-bR-9nc" firstAttribute="top" secondItem="iYi-1r-Xpd" secondAttribute="bottom" id="8de-g1-IW4"/>
                         <constraint firstAttribute="trailing" secondItem="cCh-Zn-njK" secondAttribute="trailing" constant="20" id="OF3-4U-MR2"/>
                         <constraint firstAttribute="trailing" secondItem="iYi-1r-Xpd" secondAttribute="trailing" id="jVQ-jP-Gpv"/>
                         <constraint firstItem="cCh-Zn-njK" firstAttribute="leading" secondItem="0eh-Od-6bL" secondAttribute="leading" constant="20" id="jdn-L0-0MX"/>
                         <constraint firstAttribute="bottom" secondItem="cCh-Zn-njK" secondAttribute="bottom" constant="40" id="t19-p3-AZR"/>
+                        <constraint firstItem="5WO-bR-9nc" firstAttribute="leading" secondItem="0eh-Od-6bL" secondAttribute="leading" id="uxs-YA-j9b"/>
+                        <constraint firstAttribute="bottom" secondItem="5WO-bR-9nc" secondAttribute="bottom" id="vDe-Ja-pCj"/>
                         <constraint firstItem="iYi-1r-Xpd" firstAttribute="leading" secondItem="0eh-Od-6bL" secondAttribute="leading" id="wll-6W-ioB"/>
+                        <constraint firstAttribute="trailing" secondItem="5WO-bR-9nc" secondAttribute="trailing" id="x2d-vw-Zyc"/>
                         <constraint firstItem="iYi-1r-Xpd" firstAttribute="top" secondItem="0eh-Od-6bL" secondAttribute="top" id="ymZ-B3-1Fr"/>
                     </constraints>
                 </view>
@@ -115,5 +122,6 @@
         <image name="ic_dont_wear_glasses" width="104" height="104"/>
         <image name="ic_dont_wear_hat" width="104" height="104"/>
         <image name="ic_dont_wear_mask" width="104" height="104"/>
+        <image name="main-face-pole" width="557.5" height="1070"/>
     </resources>
 </document>

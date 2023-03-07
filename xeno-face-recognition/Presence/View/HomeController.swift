@@ -19,7 +19,7 @@ class HomeController: UIViewController {
     @IBOutlet weak var img5: UIImageView!
     
     
-    var allFaces = [FaceIdService.Face]()
+    var allFaces: [Face] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,7 +154,7 @@ class HomeController: UIViewController {
                 guard let faceFeatures = faceFeatures else {
                     return
                 }
-                let newFace = FaceIdService.Face(photo: "example\(num)", features: faceFeatures)
+                let newFace = Face(photo: "example\(num)", features: faceFeatures)
                 if num == 1{
                     self.allFaces = [newFace]
                 }else{

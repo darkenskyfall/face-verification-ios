@@ -48,17 +48,27 @@
                                 </constraint>
                             </constraints>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-face-pole" translatesAutoresizingMaskIntoConstraints="NO" id="K07-f6-Ihv">
+                            <rect key="frame" x="0.0" y="119" width="393" height="733"/>
+                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9C-G6-s99">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="119"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-nd-d7T">
                                     <rect key="frame" x="20" y="70.333333333333329" width="353" height="28.666666666666671"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28.670000000000002" id="eW0-eN-UCL"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28.666666666666671" id="gnl-j6-P9b"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ikuti Instruksi dibawah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5S-Uk-SKh">
                                     <rect key="frame" x="20" y="40" width="353" height="20.333333333333329"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20.333333333333329" id="eG9-I3-5UW"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -81,7 +91,11 @@
                         <constraint firstAttribute="trailing" secondItem="5Zl-wK-Owp" secondAttribute="trailing" constant="20" id="7c5-Hj-BdV"/>
                         <constraint firstItem="5Zl-wK-Owp" firstAttribute="leading" secondItem="Hr9-pz-sJO" secondAttribute="leading" constant="20" id="F0P-BK-5D9"/>
                         <constraint firstItem="t9C-G6-s99" firstAttribute="leading" secondItem="Hr9-pz-sJO" secondAttribute="leading" id="Jt5-It-gcX"/>
+                        <constraint firstItem="K07-f6-Ihv" firstAttribute="top" secondItem="t9C-G6-s99" secondAttribute="bottom" id="LBB-9W-7On"/>
+                        <constraint firstItem="K07-f6-Ihv" firstAttribute="leading" secondItem="Hr9-pz-sJO" secondAttribute="leading" id="Oyf-O1-b0w"/>
                         <constraint firstAttribute="bottom" secondItem="5Zl-wK-Owp" secondAttribute="bottom" constant="40" id="d6a-f4-6Do"/>
+                        <constraint firstAttribute="trailing" secondItem="K07-f6-Ihv" secondAttribute="trailing" id="eaS-0a-7ok"/>
+                        <constraint firstAttribute="bottom" secondItem="K07-f6-Ihv" secondAttribute="bottom" id="hBM-B2-KOz"/>
                         <constraint firstAttribute="trailing" secondItem="t9C-G6-s99" secondAttribute="trailing" id="kWP-nw-hhG"/>
                         <constraint firstItem="t9C-G6-s99" firstAttribute="top" secondItem="Hr9-pz-sJO" secondAttribute="top" id="lQA-Qv-veR"/>
                     </constraints>
@@ -107,5 +121,6 @@
         <image name="ic_dont_wear_glasses" width="104" height="104"/>
         <image name="ic_dont_wear_hat" width="104" height="104"/>
         <image name="ic_dont_wear_mask" width="104" height="104"/>
+        <image name="main-face-pole" width="557.5" height="1070"/>
     </resources>
 </document>

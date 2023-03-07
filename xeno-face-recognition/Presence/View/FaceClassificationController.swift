@@ -10,6 +10,7 @@ import CoreImage
 import AVFoundation
 import TensorFlowLite
 import Accelerate
+import CoreML
 
 class FaceClassificationController: UIViewController {
     
@@ -64,9 +65,11 @@ class FaceClassificationController: UIViewController {
     
     var flag: Bool = false
     
-    var allFaces = [FaceIdService.Face]()
+    var allFaces: [Face] = []
     
     var selectedFaceFeatures: FaceIdService.FaceFeatures?
+    
+    let treshold = 70.0 // find what is best
     
     init() {
         super.init(nibName: "FaceClassificationController", bundle: nil)
@@ -277,8 +280,9 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
                         }
                         return
                     }
-
+                    
                     self.compareImage(buffer: image)
+                    
                 } else {
                     self.setStatus(status: "face-not-found")
                     self.isMatch = false
@@ -302,18 +306,22 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
             
             if let selectedFaceFeatures = self.selectedFaceFeatures{
                 
-                let a = FaceIdService.shared.isFace(self.allFaces[0], hasCloseFeaturesWith: selectedFaceFeatures)
-                let b = FaceIdService.shared.isFace(self.allFaces[1], hasCloseFeaturesWith: selectedFaceFeatures)
-                let c = FaceIdService.shared.isFace(self.allFaces[2], hasCloseFeaturesWith: selectedFaceFeatures)
+                let a = self.isFace(self.allFaces[0], hasCloseFeaturesWith: selectedFaceFeatures)
+                let b = self.isFace(self.allFaces[1], hasCloseFeaturesWith: selectedFaceFeatures)
+                let c = self.isFace(self.allFaces[2], hasCloseFeaturesWith: selectedFaceFeatures)
                 
-                print("a", a)
-                print("b", b)
-                print("c", c)
+//                print("a", a)
+//                print("b", b)
+//                print("c", c)
                 
-                let match = [a, b ,c]
+                let match = [a, b ,c].min()
                 
-                if !match.contains(false){
-                        self.isMatch = true
+                DispatchQueue.main.async {
+                    self.percentVal.text = "\(match!)"
+                }
+                
+                if match! < self.treshold{
+//                        self.isMatch = true
                     self.setStatus(status: "face-match")
                 }else{
                     self.setStatus(status: "face-not-match")
@@ -325,6 +333,23 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
         }
         
         
+    }
+    
+    func isFace(_ face: Face, hasCloseFeaturesWith otherFaceFeatures: MLMultiArray) -> Double {
+        let treshold = 70.0 // find what is best
+        var distance: Double = 0
+
+        for index in 0..<otherFaceFeatures.count {
+            let delta = face.features[index].doubleValue - otherFaceFeatures[index].doubleValue
+            distance += delta * delta
+        }
+        distance = distance.squareRoot()
+        
+//        DispatchQueue.main.async {
+//            self.percentVal.text = "\(distance)"
+//        }
+
+        return distance //distance < treshold
     }
     
     private func setStatus(status: String){

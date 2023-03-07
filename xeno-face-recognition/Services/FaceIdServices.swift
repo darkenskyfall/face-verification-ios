@@ -10,14 +10,14 @@ import UIKit
 import CoreML
 import Vision
 
+struct Face {
+    let photo: String
+    var features: FaceIdService.FaceFeatures
+}
+
 class FaceIdService {
 
     typealias FaceFeatures = MLMultiArray
-
-    struct Face {
-        let photo: String
-        var features: FaceIdService.FaceFeatures
-    }
 
     static var shared = FaceIdService()
 
@@ -53,19 +53,5 @@ class FaceIdService {
             }
         }
     }
-
-    func isFace(_ face: Face, hasCloseFeaturesWith otherFaceFeatures: MLMultiArray) -> Bool {
-        let treshold = 70.0 // find what is best
-        var distance: Double = 0
-
-        for index in 0..<otherFaceFeatures.count {
-            let delta = face.features[index].doubleValue - otherFaceFeatures[index].doubleValue
-            distance += delta * delta
-        }
-        distance = distance.squareRoot()
-        
-        print(distance)
-
-        return distance < treshold
-    }
+    
 }
