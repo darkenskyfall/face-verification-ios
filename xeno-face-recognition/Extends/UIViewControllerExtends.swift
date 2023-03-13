@@ -12,23 +12,6 @@ import CoreImage
 
 extension UIViewController{
     
-    func estimateDistance(for observation: VNFaceObservation) -> CGFloat? {
-        
-        let imageHeight: CGFloat = 480
-        
-        // Assuming the camera has a fixed focal length
-        let focalLength: CGFloat = 5.5 // in mm
-        
-        // Calculate the approximate real-world height of the face
-        let faceHeight: CGFloat = observation.boundingBox.height * imageHeight
-        
-        // Calculate the distance using the formula: distance = focalLength * realHeight / imageHeight
-        let distance = focalLength * faceHeight / observation.boundingBox.height
-        
-        print("face distance: \(distance)")
-        
-        return distance
-    }
     
     func isTurnRight(face: VNFaceObservation)->Bool{
         if let yaw = face.yaw as? Double{

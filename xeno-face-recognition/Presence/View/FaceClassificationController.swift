@@ -5,10 +5,10 @@
 //  Created by MacOS on 27/02/23.
 //
 
+import UIKit
 import Vision
 import CoreImage
 import AVFoundation
-import TensorFlowLite
 import Accelerate
 import CoreML
 
@@ -321,7 +321,7 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
                 }
                 
                 if match! < self.treshold{
-//                        self.isMatch = true
+                    self.isMatch = true
                     self.setStatus(status: "face-match")
                 }else{
                     self.setStatus(status: "face-not-match")
