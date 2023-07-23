@@ -309,11 +309,7 @@ extension FaceClassificationController: AVCaptureVideoDataOutputSampleBufferDele
                 let a = self.isFace(self.allFaces[0], hasCloseFeaturesWith: selectedFaceFeatures)
                 let b = self.isFace(self.allFaces[1], hasCloseFeaturesWith: selectedFaceFeatures)
                 let c = self.isFace(self.allFaces[2], hasCloseFeaturesWith: selectedFaceFeatures)
-                
-//                print("a", a)
-//                print("b", b)
-//                print("c", c)
-                
+                                
                 let match = [a, b ,c].min()
                 
                 DispatchQueue.main.async {

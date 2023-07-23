@@ -50,15 +50,6 @@ class ScanFaceController: UIViewController {
     
     var status: Int = 0
     
-//    private var interpreter: Interpreter!
-//    private var modelName = "vggface"
-//    var frameCount: Int = 0
-//    var resultCount: Int = 1
-//
-//    let threshold: Double = 0.7
-//
-//    var yawAngle: Int = 0
-    
     var flag: Bool = false
     
     init() {
